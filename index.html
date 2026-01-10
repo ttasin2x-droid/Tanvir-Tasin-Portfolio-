@@ -5,19 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Tanvir Tasin - Portfolio</title>
-    <meta name="description" content="Portfolio of Tanvir Tasin - Graphic Designer & Scout from Bangladesh. Exploring creativity through design and social work.">
-    <meta name="keywords" content="Tanvir Tasin, Graphic Design, Scouting, Bangladesh Scouts, Portfolio, Creative, Art">
+    <meta name="description" content="Portfolio of Tanvir Tasin - Graphic Designer & Scout from Bangladesh.">
+    <meta name="keywords" content="Tanvir Tasin, Graphic Design, Scouting, Portfolio">
     <meta name="author" content="Tanvir Tasin">
-
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Tanvir Tasin - Creative Portfolio">
-    <meta property="og:description" content="Check out my latest graphic design works and scouting activities.">
     <meta property="og:image" content="https://i.postimg.cc/KY7QKvLN/Messenger-creation-73E0A137-A629-4FAB-88DE-FB30518AB4DA.jpg">
 
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="Tanvir Tasin - Creative Portfolio">
-    <meta property="twitter:description" content="Check out my latest graphic design works and scouting activities.">
-    <meta property="twitter:image" content="https://i.postimg.cc/KY7QKvLN/Messenger-creation-73E0A137-A629-4FAB-88DE-FB30518AB4DA.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -57,6 +49,16 @@
         }
         .page-transition.active { opacity: 1; visibility: visible; transform: scale(1); pointer-events: all; }
 
+        /* --- CLEAN BACK TO TOP BUTTON --- */
+        #backToTop {
+            display: none; position: fixed; bottom: 30px; right: 30px; z-index: 999;
+            border: none; outline: none; background-color: var(--primary-color);
+            color: white; cursor: pointer; width: 45px; height: 45px; border-radius: 50%;
+            font-size: 1.1rem; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease; align-items: center; justify-content: center;
+        }
+        #backToTop:hover { background-color: var(--accent-color); transform: translateY(-3px); }
+
         /* --- BUTTONS --- */
         .btn-main {
             background-color: var(--primary-color); color: white; padding: 10px 22px; 
@@ -73,7 +75,6 @@
         }
         .btn-outline:hover { background: var(--text-dark); color: white; }
 
-        /* Premium Running Shine Button */
         .btn-premium {
             background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
             color: white; border: none; padding: 14px 40px; border-radius: 50px;
@@ -89,19 +90,6 @@
         }
         @keyframes runningShine { 0% { left: -100%; } 50% { left: 200%; } 100% { left: 200%; } }
         .btn-premium:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(37, 99, 235, 0.5); }
-
-        /* --- BACK TO TOP BUTTON --- */
-        #backToTop {
-            display: none; position: fixed; bottom: 30px; right: 30px; z-index: 999;
-            border: none; outline: none; background-color: var(--accent-color); color: white;
-            cursor: pointer; width: 50px; height: 50px; border-radius: 50%;
-            font-size: 1.2rem; box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
-            transition: all 0.3s ease; align-items: center; justify-content: center;
-        }
-        #backToTop:hover {
-            background-color: var(--primary-color); transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(15, 23, 42, 0.4);
-        }
 
         /* --- WEATHER EFFECTS --- */
         #weather-container {
@@ -161,7 +149,7 @@
         .section-title h2 { font-size: 1.8rem; font-weight: 800; color: var(--primary-color); margin-bottom: 8px; text-transform: uppercase; }
         .section-title p { color: var(--text-light); font-size: 1rem; }
 
-        /* --- PREMIUM GALLERY --- */
+        /* --- PREMIUM GALLERY (FIXED ANIMATION) --- */
         .gallery-grid {
             display: grid; grid-template-columns: repeat(3, 1fr); /* 3 Cols */
             gap: 20px; margin-bottom: 30px;
@@ -169,10 +157,20 @@
         .gallery-item {
             position: relative; border-radius: 16px; overflow: hidden;
             background: #fff; box-shadow: var(--shadow-sm); cursor: pointer;
-            height: 250px; transition: all 0.4s; display: none; /* Hidden initially */
+            height: 250px; display: none; /* Hidden initially */
         }
         
         .gallery-item.visible { display: block; } /* Controlled by JS */
+
+        /* THIS ANIMATION RUNS WHEN VIEW MORE IS CLICKED */
+        .fade-up-anim {
+            animation: fadeInUpCustom 0.6s ease-out forwards;
+        }
+
+        @keyframes fadeInUpCustom {
+            0% { opacity: 0; transform: translateY(40px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
 
         .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s ease; }
         
@@ -315,254 +313,6 @@
                 <div class="gallery-item" data-aos="fade-up" onclick="openLightbox(this)"><img src="https://i.postimg.cc/6pVtQnHD/1767979408532.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
                 <div class="gallery-item" data-aos="fade-up" onclick="openLightbox(this)"><img src="https://i.postimg.cc/P5bTqY69/1767979511041.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
                 
-                <div class="gallery-item" data-aos="fade-up" onclick="openLightbox(this)"><img src="https://i.postimg.cc/BZ272cKz/FB-IMG-1767985108189.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-                <div class="gallery-item" data-aos="fade-up" onclick="openLightbox(this)"><img src="https://i.postimg.cc/44p2pb9F/FB-IMG-1767985120570.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-                <div class="gallery-item" data-aos="fade-up" onclick="openLightbox(this)"><img src="https://i.postimg.cc/dQGNGmyN/FB-IMG-1767985130763.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-                <div class="gallery-item" data-aos="fade-up" onclick="openLightbox(this)"><img src="https://i.postimg.cc/mZ7p7NH5/FB-IMG-1767985138610.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-                <div class="gallery-item" data-aos="fade-up" onclick="openLightbox(this)"><img src="https://i.postimg.cc/gc3t3qhp/FB-IMG-1767985143137.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-                <div class="gallery-item" data-aos="fade-up" onclick="openLightbox(this)"><img src="https://i.postimg.cc/ZY6s6FNT/FB-IMG-1767985168395.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-                <div class="gallery-item" data-aos="fade-up" onclick="openLightbox(this)"><img src="https://i.postimg.cc/qB2D2XKp/FB-IMG-1767985179851.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-                <div class="gallery-item" data-aos="fade-up" onclick="openLightbox(this)"><img src="https://i.postimg.cc/zDT2TSh8/FB-IMG-1767985186964.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-                <div class="gallery-item" data-aos="fade-up" onclick="openLightbox(this)"><img src="https://i.postimg.cc/057X7dS2/FB-IMG-1767985194468.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-                <div class="gallery-item" data-aos="fade-up" onclick="openLightbox(this)"><img src="https://i.postimg.cc/sf5H59Wg/FB-IMG-1767985202162.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-                <div class="gallery-item" data-aos="fade-up" onclick="openLightbox(this)"><img src="https://i.postimg.cc/tRFvFt6g/FB-IMG-1767985208165.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-                <div class="gallery-item" data-aos="fade-up" onclick="openLightbox(this)"><img src="https://i.postimg.cc/KctptrTz/FB-IMG-1767985217167.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-                <div class="gallery-item" data-aos="fade-up" onclick="openLightbox(this)"><img src="https://i.postimg.cc/1RD7DcFX/FB-IMG-1767985221341.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-                <div class="gallery-item" data-aos="fade-up" onclick="openLightbox(this)"><img src="https://i.postimg.cc/xTYx5JGQ/FB-IMG-1767985225321.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-                <div class="gallery-item" data-aos="fade-up" onclick="openLightbox(this)"><img src="https://i.postimg.cc/hPgysz8K/FB-IMG-1767985232344.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-                <div class="gallery-item" data-aos="fade-up" onclick="openLightbox(this)"><img src="https://i.postimg.cc/L6RCDYkH/FB-IMG-1767985238024.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-                <div class="gallery-item" data-aos="fade-up" onclick="openLightbox(this)"><img src="https://i.postimg.cc/c4Z9hg7L/FB-IMG-1767985256810.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-                <div class="gallery-item" data-aos="fade-up" onclick="openLightbox(this)"><img src="https://i.postimg.cc/4NZLP7vd/FB-IMG-1767985275427.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-            </div>
-
-            <div class="load-more-container">
-                <button id="view-more-btn" onclick="loadMoreImages()" class="btn-outline" data-aos="fade-up">View More <i class="fas fa-arrow-down"></i></button>
-                <button id="view-less-btn" onclick="viewLessImages()" class="btn-outline" style="display: none;" data-aos="fade-up">View Less <i class="fas fa-arrow-up"></i></button>
-                <button onclick="goToPage('all-works.html')" class="btn-premium" data-aos="fade-up" data-aos-delay="100">View All Works <i class="fas fa-arrow-right"></i></button>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-padding">
-        <div class="container">
-            <div class="section-title" data-aos="fade-up">
-                <h2>SDGs Projects</h2>
-                <p>Sustainable Development Goals Activities</p>
-            </div>
-            <div class="sdg-grid">
-                <a href="https://sdgs.scout.org/project/cleaner-streets-greener-tomorrow" target="_blank" class="sdg-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="sdg-img"><img src="https://i.postimg.cc/1XR9xt0M/1000165667.jpg" alt="Cleaner Streets"></div>
-                    <div class="sdg-text"><h3>Cleaner Streets, Greener Tomorrow</h3></div>
-                </a>
-                <a href="https://sdgs.scout.org/project/advanced-fire-safety-drill-firefighters" target="_blank" class="sdg-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="sdg-img"><img src="https://i.postimg.cc/9MC2TMkf/1000165632.jpg" alt="Fire Safety"></div>
-                    <div class="sdg-text"><h3>Advanced Fire Safety Drill</h3></div>
-                </a>
-                <a href="https://sdgs.scout.org/project/post-cyclone-cleanup-scout-volunteers" target="_blank" class="sdg-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="sdg-img"><img src="https://i.postimg.cc/hv3RH0tX/1000165486.jpg" alt="Cleanup"></div>
-                    <div class="sdg-text"><h3>Post Cyclone Cleanup</h3></div>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-padding">
-        <div class="container">
-            <div class="promo-card" data-aos="flip-up" data-aos-duration="1200">
-                <div class="promo-image">
-                    <img src="https://i.postimg.cc/qRY5L4c1/Copy-of-bd-20260110-020452-0000.jpg" alt="Tanvir Tasin Profile">
-                </div>
-                <div class="promo-content">
-                    <h2>I'm Tanvir Tasin</h2>
-                    <p class="subtitle">Graphic Designer & Scout</p>
-                    <p class="desc">Hello Dear, thank you for visiting my portfolio. If you want more details, please visit my social media accounts. THANK YOU.</p>
-                    <div class="info-grid">
-                        <div class="info-item"><i class="fas fa-map-marker-alt"></i> Barishal, Barguna, Barguna Sadar</div>
-                        <div class="info-item"><i class="fas fa-phone-alt"></i> +8801533327033</div>
-                        <div class="info-item"><i class="fas fa-envelope"></i> tasintanvir463@gmail.com</div>
-                    </div>
-                    <div style="display: flex; gap: 15px;">
-                        <button class="btn-main" onclick="openModal('contactModal')" style="padding: 10px 25px; font-size: 0.9rem;">Contact Me Anytime</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-padding" style="padding-top: 0;">
-        <div class="container">
-            <div class="social-box" data-aos="zoom-in-up">
-                <a href="https://www.facebook.com/tanvir.tasin.940" target="_blank" class="social-item fb">
-                    <div class="s-icon"><i class="fab fa-facebook-f"></i></div>
-                    <span>Facebook</span>
-                </a>
-                <a href="https://www.instagram.com/tanvir_tasin1/" target="_blank" class="social-item insta">
-                    <div class="s-icon"><i class="fab fa-instagram"></i></div>
-                    <span>Instagram</span>
-                </a>
-                <a href="https://wa.me/+8801533327033" target="_blank" class="social-item wa">
-                    <div class="s-icon"><i class="fab fa-whatsapp"></i></div>
-                    <span>WhatsApp</span>
-                </a>
-            </div>
-            <p style="text-align: center; margin-top: 30px; font-size: 0.8rem; color: #999;">© 2026 Tanvir Tasin. All Rights Reserved.</p>
-        </div>
-    </section>
-    
-    <button id="backToTop" onclick="scrollToTop()"><i class="fas fa-arrow-up"></i></button>
-
-    <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
-        <i class="fas fa-times close-lightbox" onclick="closeLightbox(event)"></i>
-        <img id="lightbox-img" src="" alt="Full View">
-    </div>
-
-    <div id="scoutModal" class="modal-overlay" onclick="closeModal(event, 'scoutModal')">
-        <div class="glass-modal">
-            <h3 style="margin-bottom: 20px; color: var(--accent-color);">Scouting Profiles</h3>
-            <a href="https://service.scouts.gov.bd/user-verify?scoutID=Be8174" target="_blank" class="modal-btn">Bangladesh Scouts</a>
-            <a href="https://www.scout.org/user/2826044" target="_blank" class="modal-btn">World Scouts</a>
-            <a href="https://sdgs.scout.org/user/3060859" target="_blank" class="modal-btn">SDGs</a>
-            <button onclick="closeModal(event, 'scoutModal')" style="margin-top: 15px; background: none; border: none; cursor: pointer; color: #666;">Close</button>
-        </div>
-    </div>
-
-    <div id="contactModal" class="modal-overlay" onclick="closeModal(event, 'contactModal')">
-        <div class="glass-modal">
-            <h3 style="margin-bottom: 20px;">Get in Touch</h3>
-            <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 20px;">
-                <a href="https://www.facebook.com/tanvir.tasin.940" target="_blank" style="font-size: 2rem; color: #1877f2;"><i class="fab fa-facebook"></i></a>
-                <a href="https://www.instagram.com/tanvir_tasin1/" target="_blank" style="font-size: 2rem; color: #E1306C;"><i class="fab fa-instagram"></i></a>
-                <a href="https://wa.me/+8801533327033" target="_blank" style="font-size: 2rem; color: #25D366;"><i class="fab fa-whatsapp"></i></a>
-            </div>
-            <button onclick="closeModal(event, 'contactModal')" style="background: none; border: none; cursor: pointer; color: #666;">Close Window</button>
-        </div>
-    </div>
-
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-    <script>
-        function openModal(modalId) { document.getElementById(modalId).style.display = 'flex'; }
-        
-        function closeModal(event, modalId) {
-            if (event.target.id === modalId || event.target.tagName === 'BUTTON') {
-                document.getElementById(modalId).style.display = 'none';
-            }
-        }
-
-        const initialCount = 4;
-        let visibleCount = initialCount;
-        const batchSize = 4; // CHANGED FROM 3 TO 4
-        
-        function updateGalleryUI() {
-            const items = document.querySelectorAll('.gallery-item');
-            const moreBtn = document.getElementById("view-more-btn");
-            const lessBtn = document.getElementById("view-less-btn");
-
-            for (let i = 0; i < items.length; i++) {
-                if (i < visibleCount) {
-                    items[i].classList.add('visible');
-                } else {
-                    items[i].classList.remove('visible');
-                }
-            }
-
-            if (visibleCount >= items.length) {
-                moreBtn.style.display = 'none';
-            } else {
-                moreBtn.style.display = 'inline-flex';
-            }
-
-            if (visibleCount > initialCount) {
-                lessBtn.style.display = 'inline-flex';
-            } else {
-                lessBtn.style.display = 'none';
-            }
-            
-            // REFRESH AOS after adding new items
-            setTimeout(() => {
-                AOS.refresh(); 
-            }, 100);
-        }
-
-        function loadMoreImages() {
-            visibleCount += batchSize;
-            updateGalleryUI();
-        }
-
-        function viewLessImages() {
-            visibleCount = initialCount;
-            updateGalleryUI();
-            document.getElementById('my-works').scrollIntoView({behavior: 'smooth'});
-        }
-
-        function goToPage(url) {
-            const overlay = document.getElementById('pageTransition');
-            overlay.classList.add('active');
-            setTimeout(() => { window.location.href = url; }, 500);
-        }
-
-        function openLightbox(element) {
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImg = document.getElementById('lightbox-img');
-            lightboxImg.src = element.querySelector('img').src;
-            lightbox.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeLightbox(event) {
-            if (event.target.id === 'lightbox' || event.target.classList.contains('close-lightbox') || event.target.tagName === 'I') {
-                document.getElementById('lightbox').classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
-        }
-
-        // --- ORDER IS IMPORTANT: 1. Show Images 2. Init Animation ---
-        window.onload = function() {
-            const date = new Date();
-            const month = date.getMonth(); 
-            if (month === 11 || month === 0 || month === 1) {
-                createSoftSnowfall();
-            }
-            
-            // 1. Show first 4 images
-            updateGalleryUI();
-
-            // 2. Initialize AOS AFTER images are visible
-            setTimeout(() => {
-                AOS.init({ duration: 800, once: true, offset: 50 });
-            }, 100);
-        };
-
-        function createSoftSnowfall() {
-            const container = document.getElementById('weather-container');
-            const snowflakeCount = 35; 
-            for (let i = 0; i < snowflakeCount; i++) {
-                const flake = document.createElement('div');
-                flake.classList.add('snowflake');
-                flake.innerHTML = '❄';
-                flake.style.left = Math.random() * 100 + 'vw';
-                flake.style.fontSize = (Math.random() * 15 + 10) + 'px';
-                const duration = Math.random() * 10 + 5; 
-                flake.style.animationDuration = `${duration}s, ${Math.random() * 4 + 3}s`;
-                flake.style.animationDelay = Math.random() * 5 + 's';
-                container.appendChild(flake);
-            }
-            setTimeout(() => {
-                container.style.opacity = '0';
-                setTimeout(() => { container.innerHTML = ''; container.style.display = 'none'; }, 1500);
-            }, 6000);
-        }
-
-        window.onscroll = function() {
-            var btn = document.getElementById("backToTop");
-            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-                btn.style.display = "flex";
-            } else {
-                btn.style.display = "none";
-            }
-        };
-
-        function scrollToTop() { window.scrollTo({top: 0, behavior: 'smooth'}); }
-    </script>
-</body>
-</html>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="https://i.postimg.cc/BZ272cKz/FB-IMG-1767985108189.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="https://i.postimg.cc/44p2pb9F/FB-IMG-1767985120570.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="https://i.postimg.cc/dQGNGmyN/FB-IMG-1767985130763.jpg"><div class="overlay"><i
