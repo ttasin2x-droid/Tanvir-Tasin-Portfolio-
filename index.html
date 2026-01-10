@@ -56,12 +56,11 @@
         .btn-outline {
             background: transparent; color: var(--text-dark); border: 2px solid var(--text-dark);
             padding: 10px 25px; border-radius: 50px; font-weight: 700; cursor: pointer;
-            transition: 0.3s; font-size: 0.8rem;
-            display: inline-flex; align-items: center; gap: 8px;
+            transition: 0.3s; font-size: 0.8rem; display: inline-flex; align-items: center; gap: 8px;
         }
         .btn-outline:hover { background: var(--text-dark); color: white; }
 
-        /* --- PREMIUM RUNNING SHINE BUTTON --- */
+        /* Premium Running Shine Button */
         .btn-premium {
             background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
             color: white; border: none; padding: 14px 40px; border-radius: 50px;
@@ -70,27 +69,12 @@
             box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3); text-decoration: none;
             position: relative; overflow: hidden; z-index: 1;
         }
-        
-        /* The Running Shine Effect */
         .btn-premium::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 50%;
-            height: 100%;
+            content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
             background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
-            transform: skewX(-25deg);
-            animation: runningShine 3s infinite; /* Runs every 3 seconds */
-            z-index: -1;
+            transform: skewX(-25deg); animation: runningShine 3s infinite; z-index: -1;
         }
-
-        @keyframes runningShine {
-            0% { left: -100%; }
-            50% { left: 200%; } /* Fast sweep */
-            100% { left: 200%; } /* Wait for rest of duration */
-        }
-
+        @keyframes runningShine { 0% { left: -100%; } 50% { left: 200%; } 100% { left: 200%; } }
         .btn-premium:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(37, 99, 235, 0.5); }
 
         /* --- BACK TO TOP BUTTON --- */
@@ -132,7 +116,6 @@
             display: flex; justify-content: space-between; align-items: center; height: 600px;
         }
         .hero-text { padding: 60px; width: 50%; z-index: 2; }
-        
         .hero-text h1 {
             font-size: 4.5rem; line-height: 1; font-weight: 800; margin-bottom: 25px;
             background: linear-gradient(to right, #0f172a 20%, #2563eb 40%, #93c5fd 50%, #2563eb 60%, #0f172a 80%);
@@ -173,11 +156,10 @@
         .gallery-item {
             position: relative; border-radius: 16px; overflow: hidden;
             background: #fff; box-shadow: var(--shadow-sm); cursor: pointer;
-            height: 250px; transition: all 0.4s; display: none; /* Hidden for Load More */
+            height: 250px; transition: all 0.4s; display: none; /* Hidden initially */
         }
         
-        .gallery-item.visible { display: block; animation: fadeInItem 0.6s ease forwards; }
-        @keyframes fadeInItem { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .gallery-item.visible { display: block; } /* Controlled by JS */
 
         .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s ease; }
         
@@ -198,7 +180,7 @@
 
         .load-more-container { text-align: center; margin-top: 40px; display: flex; flex-direction: column; align-items: center; gap: 20px; }
 
-        /* --- PROMO & SOCIAL --- */
+        /* --- OTHER SECTIONS --- */
         .promo-card {
             background: #fff; border-radius: 25px; padding: 0; box-shadow: var(--shadow-lg); 
             display: flex; align-items: stretch; overflow: hidden; border: 1px solid rgba(0,0,0,0.05); 
@@ -248,7 +230,7 @@
         }
         .close-lightbox:hover { color: var(--accent-color); transform: rotate(90deg); }
 
-        /* --- MODAL (CONTACT/SCOUT) --- */
+        /* --- MODAL --- */
         .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(5px); z-index: 1000; display: none; justify-content: center; align-items: center; }
         .glass-modal { background: rgba(255, 255, 255, 0.95); width: 90%; max-width: 400px; border-radius: 24px; padding: 40px; text-align: center; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); animation: fadeIn 0.3s ease; }
         .modal-btn { display: block; padding: 15px; margin-bottom: 10px; background: #f8fafc; border-radius: 12px; text-decoration: none; color: var(--text-dark); font-weight: 600; transition: 0.2s; }
@@ -268,17 +250,16 @@
             .promo-content { width: 100%; padding: 25px; text-align: center; }
             .info-item { justify-content: center; }
             .sdg-grid { grid-template-columns: 1fr; }
-            .gallery-grid { grid-template-columns: repeat(2, 1fr); } /* 2 cols on tablet */
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
         }
         @media (max-width: 600px) {
-            .gallery-grid { grid-template-columns: 1fr; } /* 1 col on mobile */
+            .gallery-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
     
     <div class="page-transition" id="pageTransition"></div>
-
     <div id="weather-container"></div>
 
     <div class="hero-wrapper">
@@ -290,7 +271,6 @@
                     <p style="margin-bottom: 30px; color: var(--text-light); font-size: 1.1rem;">Passionate about Scouting, Design, and Digital Creativity.</p>
                     <a href="#my-works" class="btn-main">Explore Works <i class="fas fa-arrow-down"></i></a>
                 </div>
-                
                 <div class="hero-image-side" data-aos="fade-left" data-aos-duration="1000">
                     <img src="https://i.postimg.cc/KY7QKvLN/Messenger-creation-73E0A137-A629-4FAB-88DE-FB30518AB4DA.jpg" alt="Tanvir Tasin">
                     <div class="scout-floating-card" onclick="openModal('scoutModal')" data-aos="zoom-in" data-aos-delay="500">
@@ -317,43 +297,35 @@
             </div>
 
             <div class="gallery-grid">
-                <div class="gallery-item" onclick="openLightbox(this)"><img src="https://i.postimg.cc/x1GndMs7/1767979384253.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-                <div class="gallery-item" onclick="openLightbox(this)"><img src="https://i.postimg.cc/DwQnzLCR/1767979393790.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-                <div class="gallery-item" onclick="openLightbox(this)"><img src="https://i.postimg.cc/6pVtQnHD/1767979408532.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-                <div class="gallery-item" onclick="openLightbox(this)"><img src="https://i.postimg.cc/P5bTqY69/1767979511041.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+                <div class="gallery-item" data-aos="fade-up" onclick="openLightbox(this)"><img src="https://i.postimg.cc/x1GndMs7/1767979384253.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+                <div class="gallery-item" data-aos="fade-up" onclick="openLightbox(this)"><img src="https://i.postimg.cc/DwQnzLCR/1767979393790.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+                <div class="gallery-item" data-aos="fade-up" onclick="openLightbox(this)"><img src="https://i.postimg.cc/6pVtQnHD/1767979408532.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+                <div class="gallery-item" data-aos="fade-up" onclick="openLightbox(this)"><img src="https://i.postimg.cc/P5bTqY69/1767979511041.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
                 
-                <div class="gallery-item" onclick="openLightbox(this)"><img src="https://i.postimg.cc/BZ272cKz/FB-IMG-1767985108189.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-                <div class="gallery-item" onclick="openLightbox(this)"><img src="https://i.postimg.cc/44p2pb9F/FB-IMG-1767985120570.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-                <div class="gallery-item" onclick="openLightbox(this)"><img src="https://i.postimg.cc/dQGNGmyN/FB-IMG-1767985130763.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-                <div class="gallery-item" onclick="openLightbox(this)"><img src="https://i.postimg.cc/mZ7p7NH5/FB-IMG-1767985138610.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-                <div class="gallery-item" onclick="openLightbox(this)"><img src="https://i.postimg.cc/gc3t3qhp/FB-IMG-1767985143137.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-                <div class="gallery-item" onclick="openLightbox(this)"><img src="https://i.postimg.cc/ZY6s6FNT/FB-IMG-1767985168395.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-                <div class="gallery-item" onclick="openLightbox(this)"><img src="https://i.postimg.cc/qB2D2XKp/FB-IMG-1767985179851.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-                <div class="gallery-item" onclick="openLightbox(this)"><img src="https://i.postimg.cc/zDT2TSh8/FB-IMG-1767985186964.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-                <div class="gallery-item" onclick="openLightbox(this)"><img src="https://i.postimg.cc/057X7dS2/FB-IMG-1767985194468.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-                <div class="gallery-item" onclick="openLightbox(this)"><img src="https://i.postimg.cc/sf5H59Wg/FB-IMG-1767985202162.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-                <div class="gallery-item" onclick="openLightbox(this)"><img src="https://i.postimg.cc/tRFvFt6g/FB-IMG-1767985208165.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-                <div class="gallery-item" onclick="openLightbox(this)"><img src="https://i.postimg.cc/KctptrTz/FB-IMG-1767985217167.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-                <div class="gallery-item" onclick="openLightbox(this)"><img src="https://i.postimg.cc/1RD7DcFX/FB-IMG-1767985221341.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-                <div class="gallery-item" onclick="openLightbox(this)"><img src="https://i.postimg.cc/xTYx5JGQ/FB-IMG-1767985225321.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-                <div class="gallery-item" onclick="openLightbox(this)"><img src="https://i.postimg.cc/hPgysz8K/FB-IMG-1767985232344.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-                <div class="gallery-item" onclick="openLightbox(this)"><img src="https://i.postimg.cc/L6RCDYkH/FB-IMG-1767985238024.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-                <div class="gallery-item" onclick="openLightbox(this)"><img src="https://i.postimg.cc/c4Z9hg7L/FB-IMG-1767985256810.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-                <div class="gallery-item" onclick="openLightbox(this)"><img src="https://i.postimg.cc/4NZLP7vd/FB-IMG-1767985275427.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+                <div class="gallery-item" data-aos="fade-up" onclick="openLightbox(this)"><img src="https://i.postimg.cc/BZ272cKz/FB-IMG-1767985108189.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+                <div class="gallery-item" data-aos="fade-up" onclick="openLightbox(this)"><img src="https://i.postimg.cc/44p2pb9F/FB-IMG-1767985120570.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+                <div class="gallery-item" data-aos="fade-up" onclick="openLightbox(this)"><img src="https://i.postimg.cc/dQGNGmyN/FB-IMG-1767985130763.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+                <div class="gallery-item" data-aos="fade-up" onclick="openLightbox(this)"><img src="https://i.postimg.cc/mZ7p7NH5/FB-IMG-1767985138610.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+                <div class="gallery-item" data-aos="fade-up" onclick="openLightbox(this)"><img src="https://i.postimg.cc/gc3t3qhp/FB-IMG-1767985143137.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+                <div class="gallery-item" data-aos="fade-up" onclick="openLightbox(this)"><img src="https://i.postimg.cc/ZY6s6FNT/FB-IMG-1767985168395.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+                <div class="gallery-item" data-aos="fade-up" onclick="openLightbox(this)"><img src="https://i.postimg.cc/qB2D2XKp/FB-IMG-1767985179851.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+                <div class="gallery-item" data-aos="fade-up" onclick="openLightbox(this)"><img src="https://i.postimg.cc/zDT2TSh8/FB-IMG-1767985186964.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+                <div class="gallery-item" data-aos="fade-up" onclick="openLightbox(this)"><img src="https://i.postimg.cc/057X7dS2/FB-IMG-1767985194468.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+                <div class="gallery-item" data-aos="fade-up" onclick="openLightbox(this)"><img src="https://i.postimg.cc/sf5H59Wg/FB-IMG-1767985202162.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+                <div class="gallery-item" data-aos="fade-up" onclick="openLightbox(this)"><img src="https://i.postimg.cc/tRFvFt6g/FB-IMG-1767985208165.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+                <div class="gallery-item" data-aos="fade-up" onclick="openLightbox(this)"><img src="https://i.postimg.cc/KctptrTz/FB-IMG-1767985217167.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+                <div class="gallery-item" data-aos="fade-up" onclick="openLightbox(this)"><img src="https://i.postimg.cc/1RD7DcFX/FB-IMG-1767985221341.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+                <div class="gallery-item" data-aos="fade-up" onclick="openLightbox(this)"><img src="https://i.postimg.cc/xTYx5JGQ/FB-IMG-1767985225321.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+                <div class="gallery-item" data-aos="fade-up" onclick="openLightbox(this)"><img src="https://i.postimg.cc/hPgysz8K/FB-IMG-1767985232344.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+                <div class="gallery-item" data-aos="fade-up" onclick="openLightbox(this)"><img src="https://i.postimg.cc/L6RCDYkH/FB-IMG-1767985238024.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+                <div class="gallery-item" data-aos="fade-up" onclick="openLightbox(this)"><img src="https://i.postimg.cc/c4Z9hg7L/FB-IMG-1767985256810.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+                <div class="gallery-item" data-aos="fade-up" onclick="openLightbox(this)"><img src="https://i.postimg.cc/4NZLP7vd/FB-IMG-1767985275427.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div>
             </div>
 
             <div class="load-more-container">
-                <button id="view-more-btn" onclick="loadMoreImages()" class="btn-outline" data-aos="fade-up">
-                    View More <i class="fas fa-arrow-down"></i>
-                </button>
-
-                <button id="view-less-btn" onclick="viewLessImages()" class="btn-outline" style="display: none;" data-aos="fade-up">
-                    View Less <i class="fas fa-arrow-up"></i>
-                </button>
-                
-                <button onclick="goToPage('all-works.html')" class="btn-premium" data-aos="fade-up" data-aos-delay="100">
-                    View All Works <i class="fas fa-arrow-right"></i>
-                </button>
+                <button id="view-more-btn" onclick="loadMoreImages()" class="btn-outline" data-aos="fade-up">View More <i class="fas fa-arrow-down"></i></button>
+                <button id="view-less-btn" onclick="viewLessImages()" class="btn-outline" style="display: none;" data-aos="fade-up">View Less <i class="fas fa-arrow-up"></i></button>
+                <button onclick="goToPage('all-works.html')" class="btn-premium" data-aos="fade-up" data-aos-delay="100">View All Works <i class="fas fa-arrow-right"></i></button>
             </div>
         </div>
     </section>
@@ -364,7 +336,6 @@
                 <h2>SDGs Projects</h2>
                 <p>Sustainable Development Goals Activities</p>
             </div>
-            
             <div class="sdg-grid">
                 <a href="https://sdgs.scout.org/project/cleaner-streets-greener-tomorrow" target="_blank" class="sdg-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="sdg-img"><img src="https://i.postimg.cc/1XR9xt0M/1000165667.jpg" alt="Cleaner Streets"></div>
@@ -388,7 +359,6 @@
                 <div class="promo-image">
                     <img src="https://i.postimg.cc/qRY5L4c1/Copy-of-bd-20260110-020452-0000.jpg" alt="Tanvir Tasin Profile">
                 </div>
-                
                 <div class="promo-content">
                     <h2>I'm Tanvir Tasin</h2>
                     <p class="subtitle">Graphic Designer & Scout</p>
@@ -426,9 +396,7 @@
         </div>
     </section>
     
-    <button id="backToTop" onclick="scrollToTop()">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+    <button id="backToTop" onclick="scrollToTop()"><i class="fas fa-arrow-up"></i></button>
 
     <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
         <i class="fas fa-times close-lightbox" onclick="closeLightbox(event)"></i>
@@ -460,9 +428,6 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <script>
-        // Initialize AOS Animation
-        AOS.init({ duration: 800, once: true, offset: 50 });
-
         function openModal(modalId) { document.getElementById(modalId).style.display = 'flex'; }
         
         function closeModal(event, modalId) {
@@ -471,18 +436,15 @@
             }
         }
 
-        // --- LOAD MORE / VIEW LESS LOGIC ---
-        const initialCount = 4; // Start with 4
+        const initialCount = 4;
         let visibleCount = initialCount;
-        const batchSize = 3;    // Load 3 more
+        const batchSize = 4; // CHANGED TO 4 as requested previously
         
-        // Function to update UI based on visibleCount
         function updateGalleryUI() {
             const items = document.querySelectorAll('.gallery-item');
             const moreBtn = document.getElementById("view-more-btn");
             const lessBtn = document.getElementById("view-less-btn");
 
-            // Toggle visibility of items
             for (let i = 0; i < items.length; i++) {
                 if (i < visibleCount) {
                     items[i].classList.add('visible');
@@ -491,22 +453,24 @@
                 }
             }
 
-            // Toggle "View More" button
             if (visibleCount >= items.length) {
                 moreBtn.style.display = 'none';
             } else {
                 moreBtn.style.display = 'inline-flex';
             }
 
-            // Toggle "View Less" button
             if (visibleCount > initialCount) {
                 lessBtn.style.display = 'inline-flex';
             } else {
                 lessBtn.style.display = 'none';
             }
+            
+            // CRITICAL: Refresh AOS to animate newly visible items
+            setTimeout(() => {
+                AOS.refresh(); 
+            }, 100);
         }
 
-        // Button Actions
         function loadMoreImages() {
             visibleCount += batchSize;
             updateGalleryUI();
@@ -515,48 +479,51 @@
         function viewLessImages() {
             visibleCount = initialCount;
             updateGalleryUI();
-            // Scroll back to top of gallery smoothly
             document.getElementById('my-works').scrollIntoView({behavior: 'smooth'});
         }
 
-        // --- PAGE TRANSITION FUNCTION (Shine Flash) ---
         function goToPage(url) {
             const overlay = document.getElementById('pageTransition');
-            overlay.classList.add('active'); // Flash Shine
+            overlay.classList.add('active');
             setTimeout(() => { window.location.href = url; }, 500);
         }
 
-        // --- LIGHTBOX LOGIC ---
         function openLightbox(element) {
             const lightbox = document.getElementById('lightbox');
             const lightboxImg = document.getElementById('lightbox-img');
             lightboxImg.src = element.querySelector('img').src;
             lightbox.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Stop scroll
+            document.body.style.overflow = 'hidden';
         }
 
         function closeLightbox(event) {
             if (event.target.id === 'lightbox' || event.target.classList.contains('close-lightbox') || event.target.tagName === 'I') {
                 document.getElementById('lightbox').classList.remove('active');
-                document.body.style.overflow = 'auto'; // Resume scroll
+                document.body.style.overflow = 'auto';
             }
         }
 
-        // --- AUTOMATIC SOFT WEATHER LOGIC ---
+        // --- FIXED INIT ORDER ---
         window.onload = function() {
+            // 1. First, make initial images visible
+            updateGalleryUI();
+
+            // 2. Initialize AOS *after* images are visible
+            setTimeout(() => {
+                AOS.init({ duration: 800, once: true, offset: 50 });
+            }, 100);
+
+            // 3. Start Weather (Optional)
             const date = new Date();
             const month = date.getMonth(); 
             if (month === 11 || month === 0 || month === 1) {
                 createSoftSnowfall();
             }
-            // Init gallery
-            updateGalleryUI();
         };
 
         function createSoftSnowfall() {
             const container = document.getElementById('weather-container');
             const snowflakeCount = 35; 
-
             for (let i = 0; i < snowflakeCount; i++) {
                 const flake = document.createElement('div');
                 flake.classList.add('snowflake');
@@ -574,7 +541,6 @@
             }, 6000);
         }
 
-        // --- BACK TO TOP LOGIC ---
         window.onscroll = function() {
             var btn = document.getElementById("backToTop");
             if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
