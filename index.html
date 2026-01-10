@@ -3,8 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tanvir Tasin - Portfolio</title>
     
+    <title>Tanvir Tasin - Portfolio</title>
+    <meta name="description" content="Portfolio of Tanvir Tasin - Graphic Designer & Scout from Bangladesh. Exploring creativity through design and social work.">
+    <meta name="keywords" content="Tanvir Tasin, Graphic Design, Scouting, Bangladesh Scouts, Portfolio, Creative, Art">
+    <meta name="author" content="Tanvir Tasin">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Tanvir Tasin - Creative Portfolio">
+    <meta property="og:description" content="Check out my latest graphic design works and scouting activities.">
+    <meta property="og:image" content="https://i.postimg.cc/KY7QKvLN/Messenger-creation-73E0A137-A629-4FAB-88DE-FB30518AB4DA.jpg">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Tanvir Tasin - Creative Portfolio">
+    <meta property="twitter:description" content="Check out my latest graphic design works and scouting activities.">
+    <meta property="twitter:image" content="https://i.postimg.cc/KY7QKvLN/Messenger-creation-73E0A137-A629-4FAB-88DE-FB30518AB4DA.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -438,7 +451,7 @@
 
         const initialCount = 4;
         let visibleCount = initialCount;
-        const batchSize = 4; // CHANGED TO 4 as requested previously
+        const batchSize = 4; // CHANGED FROM 3 TO 4
         
         function updateGalleryUI() {
             const items = document.querySelectorAll('.gallery-item');
@@ -465,7 +478,7 @@
                 lessBtn.style.display = 'none';
             }
             
-            // CRITICAL: Refresh AOS to animate newly visible items
+            // REFRESH AOS after adding new items
             setTimeout(() => {
                 AOS.refresh(); 
             }, 100);
@@ -503,22 +516,21 @@
             }
         }
 
-        // --- FIXED INIT ORDER ---
+        // --- ORDER IS IMPORTANT: 1. Show Images 2. Init Animation ---
         window.onload = function() {
-            // 1. First, make initial images visible
-            updateGalleryUI();
-
-            // 2. Initialize AOS *after* images are visible
-            setTimeout(() => {
-                AOS.init({ duration: 800, once: true, offset: 50 });
-            }, 100);
-
-            // 3. Start Weather (Optional)
             const date = new Date();
             const month = date.getMonth(); 
             if (month === 11 || month === 0 || month === 1) {
                 createSoftSnowfall();
             }
+            
+            // 1. Show first 4 images
+            updateGalleryUI();
+
+            // 2. Initialize AOS AFTER images are visible
+            setTimeout(() => {
+                AOS.init({ duration: 800, once: true, offset: 50 });
+            }, 100);
         };
 
         function createSoftSnowfall() {
