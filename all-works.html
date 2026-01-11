@@ -72,37 +72,17 @@
             padding: 40px 20px;
         }
         
-        /* THE PAPER CARD (Rounded & Shadow) */
+        /* THE PAPER CARD (Polaroid Style without Pin) */
         .gallery-item {
             position: relative; 
             background: #fff; 
-            padding: 15px; 
-            padding-top: 25px; 
-            padding-bottom: 40px; 
+            padding: 15px; /* Uniform padding */
+            padding-bottom: 45px; /* Extra bottom space for Polaroid look */
             border-radius: 12px; /* Rounded Corners */
             box-shadow: 2px 5px 15px rgba(0,0,0,0.1); 
             cursor: pointer; 
             transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
             display: none; 
-        }
-
-        /* --- CSS PIN (FAST LOAD) --- */
-        .pin {
-            width: 20px; height: 20px;
-            /* 3D Red Gradient Pin */
-            background: radial-gradient(circle at 30% 30%, #ff6b6b, #c0392b); 
-            border-radius: 50%;
-            position: absolute;
-            top: -8px; /* Sticks out slightly */
-            left: 50%; 
-            transform: translateX(-50%);
-            z-index: 10;
-            box-shadow: 2px 3px 5px rgba(0,0,0,0.3); /* Pin shadow */
-        }
-        /* Shine effect on pin head */
-        .pin::after {
-            content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            width: 6px; height: 6px; background: rgba(255,255,255,0.4); border-radius: 50%; filter: blur(1px);
         }
 
         /* Hover Effect */
@@ -171,7 +151,7 @@
             .gallery-header h1 { font-size: 2rem; }
             .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; padding: 20px 10px; }
             .img-wrapper { height: 150px; } 
-            .gallery-item { padding: 10px; padding-top: 20px; padding-bottom: 25px; border-radius: 10px; }
+            .gallery-item { padding: 10px; padding-bottom: 30px; border-radius: 10px; }
             .nav-prev, .nav-next { width: 35px; height: 35px; font-size: 1rem; }
             .lightbox img { max-width: 95%; }
         }
@@ -197,28 +177,28 @@
         </div>
 
         <div class="gallery-grid" id="galleryGrid">
-            <div class="gallery-item"><div class="pin"></div><div class="img-wrapper"><img src="https://i.postimg.cc/x1GndMs7/1767979384253.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div></div>
-            <div class="gallery-item"><div class="pin"></div><div class="img-wrapper"><img src="https://i.postimg.cc/DwQnzLCR/1767979393790.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div></div>
-            <div class="gallery-item"><div class="pin"></div><div class="img-wrapper"><img src="https://i.postimg.cc/6pVtQnHD/1767979408532.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div></div>
-            <div class="gallery-item"><div class="pin"></div><div class="img-wrapper"><img src="https://i.postimg.cc/P5bTqY69/1767979511041.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div></div>
-            <div class="gallery-item"><div class="pin"></div><div class="img-wrapper"><img src="https://i.postimg.cc/BZ272cKz/FB-IMG-1767985108189.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div></div>
-            <div class="gallery-item"><div class="pin"></div><div class="img-wrapper"><img src="https://i.postimg.cc/44p2pb9F/FB-IMG-1767985120570.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div></div>
-            <div class="gallery-item"><div class="pin"></div><div class="img-wrapper"><img src="https://i.postimg.cc/dQGNGmyN/FB-IMG-1767985130763.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div></div>
-            <div class="gallery-item"><div class="pin"></div><div class="img-wrapper"><img src="https://i.postimg.cc/mZ7p7NH5/FB-IMG-1767985138610.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div></div>
-            <div class="gallery-item"><div class="pin"></div><div class="img-wrapper"><img src="https://i.postimg.cc/gc3t3qhp/FB-IMG-1767985143137.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div></div>
-            <div class="gallery-item"><div class="pin"></div><div class="img-wrapper"><img src="https://i.postimg.cc/ZY6s6FNT/FB-IMG-1767985168395.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div></div>
-            <div class="gallery-item"><div class="pin"></div><div class="img-wrapper"><img src="https://i.postimg.cc/qB2D2XKp/FB-IMG-1767985179851.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div></div>
-            <div class="gallery-item"><div class="pin"></div><div class="img-wrapper"><img src="https://i.postimg.cc/zDT2TSh8/FB-IMG-1767985186964.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div></div>
-            <div class="gallery-item"><div class="pin"></div><div class="img-wrapper"><img src="https://i.postimg.cc/057X7dS2/FB-IMG-1767985194468.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div></div>
-            <div class="gallery-item"><div class="pin"></div><div class="img-wrapper"><img src="https://i.postimg.cc/sf5H59Wg/FB-IMG-1767985202162.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div></div>
-            <div class="gallery-item"><div class="pin"></div><div class="img-wrapper"><img src="https://i.postimg.cc/tRFvFt6g/FB-IMG-1767985208165.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div></div>
-            <div class="gallery-item"><div class="pin"></div><div class="img-wrapper"><img src="https://i.postimg.cc/KctptrTz/FB-IMG-1767985217167.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div></div>
-            <div class="gallery-item"><div class="pin"></div><div class="img-wrapper"><img src="https://i.postimg.cc/1RD7DcFX/FB-IMG-1767985221341.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div></div>
-            <div class="gallery-item"><div class="pin"></div><div class="img-wrapper"><img src="https://i.postimg.cc/xTYx5JGQ/FB-IMG-1767985225321.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div></div>
-            <div class="gallery-item"><div class="pin"></div><div class="img-wrapper"><img src="https://i.postimg.cc/hPgysz8K/FB-IMG-1767985232344.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div></div>
-            <div class="gallery-item"><div class="pin"></div><div class="img-wrapper"><img src="https://i.postimg.cc/L6RCDYkH/FB-IMG-1767985238024.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div></div>
-            <div class="gallery-item"><div class="pin"></div><div class="img-wrapper"><img src="https://i.postimg.cc/c4Z9hg7L/FB-IMG-1767985256810.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div></div>
-            <div class="gallery-item"><div class="pin"></div><div class="img-wrapper"><img src="https://i.postimg.cc/4NZLP7vd/FB-IMG-1767985275427.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div></div>
+            <div class="gallery-item"><div class="img-wrapper"><img src="https://i.postimg.cc/x1GndMs7/1767979384253.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div></div>
+            <div class="gallery-item"><div class="img-wrapper"><img src="https://i.postimg.cc/DwQnzLCR/1767979393790.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div></div>
+            <div class="gallery-item"><div class="img-wrapper"><img src="https://i.postimg.cc/6pVtQnHD/1767979408532.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div></div>
+            <div class="gallery-item"><div class="img-wrapper"><img src="https://i.postimg.cc/P5bTqY69/1767979511041.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div></div>
+            <div class="gallery-item"><div class="img-wrapper"><img src="https://i.postimg.cc/BZ272cKz/FB-IMG-1767985108189.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div></div>
+            <div class="gallery-item"><div class="img-wrapper"><img src="https://i.postimg.cc/44p2pb9F/FB-IMG-1767985120570.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div></div>
+            <div class="gallery-item"><div class="img-wrapper"><img src="https://i.postimg.cc/dQGNGmyN/FB-IMG-1767985130763.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div></div>
+            <div class="gallery-item"><div class="img-wrapper"><img src="https://i.postimg.cc/mZ7p7NH5/FB-IMG-1767985138610.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div></div>
+            <div class="gallery-item"><div class="img-wrapper"><img src="https://i.postimg.cc/gc3t3qhp/FB-IMG-1767985143137.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div></div>
+            <div class="gallery-item"><div class="img-wrapper"><img src="https://i.postimg.cc/ZY6s6FNT/FB-IMG-1767985168395.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div></div>
+            <div class="gallery-item"><div class="img-wrapper"><img src="https://i.postimg.cc/qB2D2XKp/FB-IMG-1767985179851.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div></div>
+            <div class="gallery-item"><div class="img-wrapper"><img src="https://i.postimg.cc/zDT2TSh8/FB-IMG-1767985186964.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div></div>
+            <div class="gallery-item"><div class="img-wrapper"><img src="https://i.postimg.cc/057X7dS2/FB-IMG-1767985194468.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div></div>
+            <div class="gallery-item"><div class="img-wrapper"><img src="https://i.postimg.cc/sf5H59Wg/FB-IMG-1767985202162.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div></div>
+            <div class="gallery-item"><div class="img-wrapper"><img src="https://i.postimg.cc/tRFvFt6g/FB-IMG-1767985208165.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div></div>
+            <div class="gallery-item"><div class="img-wrapper"><img src="https://i.postimg.cc/KctptrTz/FB-IMG-1767985217167.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div></div>
+            <div class="gallery-item"><div class="img-wrapper"><img src="https://i.postimg.cc/1RD7DcFX/FB-IMG-1767985221341.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div></div>
+            <div class="gallery-item"><div class="img-wrapper"><img src="https://i.postimg.cc/xTYx5JGQ/FB-IMG-1767985225321.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div></div>
+            <div class="gallery-item"><div class="img-wrapper"><img src="https://i.postimg.cc/hPgysz8K/FB-IMG-1767985232344.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div></div>
+            <div class="gallery-item"><div class="img-wrapper"><img src="https://i.postimg.cc/L6RCDYkH/FB-IMG-1767985238024.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div></div>
+            <div class="gallery-item"><div class="img-wrapper"><img src="https://i.postimg.cc/c4Z9hg7L/FB-IMG-1767985256810.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div></div>
+            <div class="gallery-item"><div class="img-wrapper"><img src="https://i.postimg.cc/4NZLP7vd/FB-IMG-1767985275427.jpg"><div class="overlay"><i class="fas fa-expand"></i></div></div></div>
         </div>
 
         <div class="load-more-wrapper">
