@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Tanvir Tasin - Portfolio</title>
+    <meta name="author" content="Tanvir Tasin">
+    <meta name="description" content="Check out my latest graphic design works and scouting activities.">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Tanvir Tasin - Creative Portfolio">
+    <meta property="og:description" content="Check out my latest graphic design works and scouting activities.">
+    <meta property="og:image" content="https://i.postimg.cc/KY7QKvLN/Messenger-creation-73E0A137-A629-4FAB-88DE-FB30518AB4DA.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tanvir Tasin - Creative Portfolio">
+    <meta name="twitter:description" content="Check out my latest graphic design works and scouting activities.">
+    <meta name="twitter:image" content="https://i.postimg.cc/KY7QKvLN/Messenger-creation-73E0A137-A629-4FAB-88DE-FB30518AB4DA.jpg">
+    
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/y8QscjyN/20260111-033841.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="page-transition" id="pageTransition"></div>
+    <div id="weather-container"></div>
+
+    <div class="hero-wrapper">
+        <div class="container">
+            <div class="hero-card-main">
+                <div class="hero-text" data-aos="fade-right" data-aos-duration="1000">
+                    <h4>Bangladesh Scouts</h4>
+                    <h1>Tanvir Tasin</h1>
+                    <p style="margin-bottom: 30px; color: var(--text-light); font-size: 1.1rem;">Passionate about Scouting, Design, and Digital Creativity.</p>
+                    <a href="#my-works" class="btn-main">Explore Works <i class="fas fa-arrow-down"></i></a>
+                </div>
+                <div class="hero-image-side" data-aos="fade-left" data-aos-duration="1000">
+                    <img id="dynamicHeroImg" src="https://i.postimg.cc/KY7QKvLN/Messenger-creation-73E0A137-A629-4FAB-88DE-FB30518AB4DA.jpg" alt="Tanvir Tasin">
+                    
+                    <div class="scout-floating-card" onclick="openModal('scoutModal')" data-aos="zoom-in" data-aos-delay="500">
+                        <div class="scout-thumbs">
+                            <div class="s-thumb"><img src="https://i.postimg.cc/Ssgt1NgD/Picsart-26-01-09-23-42-05-914.png"></div>
+                            <div class="s-thumb"><img src="https://i.postimg.cc/ryYPSsdZ/945a43d19f3e53ebb75f129f098a5f4d.png"></div>
+                            <div class="s-thumb"><img src="https://i.postimg.cc/J7d2b0yg/World-Scout-Emblem.png"></div>
+                        </div>
+                        <div>
+                            <strong style="display: block; font-size: 0.9rem; color: #111;">Scouting Life</strong>
+                            <span style="font-size: 0.7rem; color: #666;">Tap to View Details</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="my-works" class="section-padding">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>My Works for Bangladesh Scouts</h2>
+                <p>A collection of my graphic design and scouting memories</p>
+            </div>
+
+            <div class="gallery-grid" id="galleryGrid"></div>
+
+            <div class="load-more-container">
+                <button id="view-more-btn" onclick="loadMoreImages()" class="btn-outline" data-aos="fade-up">View More <i class="fas fa-arrow-down"></i></button>
+                <button id="view-less-btn" onclick="viewLessImages()" class="btn-outline" style="display: none;" data-aos="fade-up">View Less <i class="fas fa-arrow-up"></i></button>
+                <button onclick="goToPage('all-works.html')" class="btn-premium" data-aos="fade-up" data-aos-delay="100">View All Works <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>SDGs Projects</h2>
+                <p>Sustainable Development Goals Activities</p>
+            </div>
+            <div class="sdg-grid" id="sdgGrid"></div>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="promo-card" data-aos="flip-up" data-aos-duration="1200">
+                <div class="promo-image">
+                    <img id="dynamicProfileImg" src="https://i.postimg.cc/qRY5L4c1/Copy-of-bd-20260110-020452-0000.jpg" alt="Tanvir Tasin Profile">
+                </div>
+                <div class="promo-content">
+                    <h2>I'm Tanvir Tasin</h2>
+                    <p class="subtitle">Graphic Designer & Scout</p>
+                    <p class="desc">Hello Dear, thank you for visiting my portfolio. If you want more details, please visit my social media accounts. THANK YOU.</p>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-map-marker-alt"></i> Barishal, Barguna, Barguna Sadar</div>
+                        <div class="info-item"><i class="fas fa-phone-alt"></i> +8801533327033</div>
+                        <div class="info-item"><i class="fas fa-envelope"></i> tasintanvir463@gmail.com</div>
+                    </div>
+                    <div style="display: flex; gap: 15px;">
+                        <button class="btn-main" onclick="openModal('contactModal')">Contact Me Anytime</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" style="padding-top: 0;">
+        <div class="container">
+            <div class="social-box" data-aos="zoom-in-up">
+                <a href="https://www.facebook.com/tanvir.tasin.940" target="_blank" class="social-item fb">
+                    <div class="s-icon"><i class="fab fa-facebook-f"></i></div>
+                    <span>Facebook</span>
+                </a>
+                <a href="https://www.instagram.com/tanvir_tasin1/" target="_blank" class="social-item insta">
+                    <div class="s-icon"><i class="fab fa-instagram"></i></div>
+                    <span>Instagram</span>
+                </a>
+                <a href="https://wa.me/+8801533327033" target="_blank" class="social-item wa">
+                    <div class="s-icon"><i class="fab fa-whatsapp"></i></div>
+                    <span>WhatsApp</span>
+                </a>
+            </div>
+            <p style="text-align: center; margin-top: 30px; font-size: 0.8rem; color: #999;">© 2026 Tanvir Tasin. All Rights Reserved.</p>
+        </div>
+    </section>
+    
+    <button id="backToTop" onclick="scrollToTop()"><i class="fas fa-arrow-up"></i></button>
+
+    <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+        <i class="fas fa-times close-lightbox" onclick="closeLightbox(event)"></i>
+        <img id="lightbox-img" src="" alt="Full View">
+    </div>
+
+    <div id="scoutModal" class="modal-overlay" onclick="closeModal(event, 'scoutModal')">
+        <div class="glass-modal">
+            <h3 style="margin-bottom: 20px; color: var(--accent-color);">Scouting Profiles</h3>
+            <a href="https://service.scouts.gov.bd/user-verify?scoutID=Be8174" target="_blank" class="modal-btn">Bangladesh Scouts</a>
+            <a href="https://www.scout.org/user/2826044" target="_blank" class="modal-btn">World Scouts</a>
+            <a href="https://sdgs.scout.org/user/3060859" target="_blank" class="modal-btn">SDGs</a>
+            <button onclick="closeModal(event, 'scoutModal')" style="margin-top: 15px; background: none; border: none; cursor: pointer; color: #666;">Close</button>
+        </div>
+    </div>
+
+    <div id="contactModal" class="modal-overlay" onclick="closeModal(event, 'contactModal')">
+        <div class="glass-modal">
+            <h3 style="margin-bottom: 20px;">Get in Touch</h3>
+            <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 20px;">
+                <a href="https://www.facebook.com/tanvir.tasin.940" target="_blank" style="font-size: 2rem; color: #1877f2;"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/tanvir_tasin1/" target="_blank" style="font-size: 2rem; color: #E1306C;"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/+8801533327033" target="_blank" style="font-size: 2rem; color: #25D366;"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <button onclick="closeModal(event, 'contactModal')" style="background: none; border: none; cursor: pointer; color: #666;">Close Window</button>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
