@@ -63,6 +63,9 @@ Got a project in mind or want to discuss the latest tech? Feel free to reach out
 ```diff
 -  ⛔ DANGER: DO NOT FORK, CLONE, OR COPY THIS REPOSITORY ⛔
 -  UNAUTHORIZED USE WILL RESULT IN IMMEDIATE DMCA TAKEDOWN ACTION.
+
+
+
 This repository is protected under International Copyright Laws and the Digital Millennium Copyright Act (DMCA).
 
 The source code, graphical assets, design layout, and intellectual property contained within this repository are the exclusive property of Tanvir Tasin.
@@ -90,4 +93,4 @@ You are welcome to read the code for educational inspiration, but respect the cr
 <div align="center">
 
 
-<b>© 2026 Tanvir Tasin. All Rights Reserved.</b> </div>vvvvv
+<b>© 2026 Tanvir Tasin. All Rights Reserved.</b> </div>
