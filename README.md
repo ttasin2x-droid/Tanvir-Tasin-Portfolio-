@@ -11,8 +11,6 @@
   <img src="https://img.shields.io/badge/License-Proprietary-red?style=for-the-badge" alt="License">
 </p>
 
-<br>
-
 </div>
 
 ---
@@ -56,41 +54,27 @@ Got a project in mind or want to discuss the latest tech? Feel free to reach out
 
 ## ⚖️ LEGAL NOTICE & PROPRIETARY RIGHTS
 
-<div align="center">
-  <h3>🛑 STOP: READ BEFORE PROCEEDING 🛑</h3>
-</div>
+<h3 align="center">🛑 STOP: READ BEFORE PROCEEDING 🛑</h3>
 
-```diff
--  ⛔ DANGER: DO NOT FORK, CLONE, OR COPY THIS REPOSITORY ⛔
--  UNAUTHORIZED USE WILL RESULT IN IMMEDIATE DMCA TAKEDOWN ACTION.
+> **This repository is protected under International Copyright Laws and the Digital Millennium Copyright Act (DMCA).**
+>
+> The source code, graphical assets, design layout, and intellectual property contained within this repository are the **exclusive property of Tanvir Tasin**.
 
-
-
-This repository is protected under International Copyright Laws and the Digital Millennium Copyright Act (DMCA).
-
-The source code, graphical assets, design layout, and intellectual property contained within this repository are the exclusive property of Tanvir Tasin.
-
-⛔ RESTRICTIONS ON USE
+### ⛔ RESTRICTIONS ON USE
 By accessing this repository, you acknowledge and agree to the following terms:
 
-NO UNAUTHORIZED CLONING: You are strictly prohibited from cloning, forking, or downloading this repository to use as a template for your own portfolio.
+1. **NO UNAUTHORIZED CLONING:** You are strictly prohibited from cloning, forking, or downloading this repository to use as a template for your own portfolio.
+2. **NO ASSET THEFT:** Copying specific design elements, animations, or code snippets for commercial redistribution is forbidden.
+3. **NO PLAGIARISM:** Presenting this work as your own will be considered a severe violation of intellectual property rights.
 
-NO ASSET THEFT: Copying specific design elements, animations, or code snippets for commercial redistribution is forbidden.
+### ⚠️ ENFORCEMENT POLICY
+**Any violation of these terms will result in:**
 
-NO PLAGIARISM: Presenting this work as your own will be considered a severe violation of intellectual property rights.
+* 🚩 Immediate filing of a **DMCA Takedown Notice** with GitHub Legal.
+* 🚩 Reporting of the infringing account for violation of **GitHub Community Guidelines**.
+* 🚩 Potential permanent suspension of your GitHub account.
 
-⚠️ ENFORCEMENT POLICY
-Any violation of these terms will result in:
+> *You are welcome to read the code for educational inspiration, but respect the creator's effort by writing your own.*
 
-🚩 Immediate filing of a DMCA Takedown Notice with GitHub Legal.
-
-🚩 Reporting of the infringing account for violation of GitHub Community Guidelines.
-
-🚩 Potential permanent suspension of your GitHub account.
-
-You are welcome to read the code for educational inspiration, but respect the creator's effort by writing your own.
-
-<div align="center">
-
-
-<b>© 2026 Tanvir Tasin. All Rights Reserved.</b> </div>
+<br>
+<h4 align="center">© 2026 Tanvir Tasin. All Rights Reserved.</h4>
