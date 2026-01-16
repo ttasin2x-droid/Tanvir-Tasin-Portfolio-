@@ -1,66 +1,71 @@
 <div align="center">
 
-# 👨‍🎨 Tanvir Tasin
-### Creative Developer | UI/UX Enthusiast | Digital Artist
+# 👨‍💻 T A N V I R &nbsp; T A S I N
+### 🚀 Front-End Developer | UI/UX Designer | Open Source Enthusiast
 
-<p align="center">
+<p>
   <a href="https://ttasin2x-droid.github.io/Tanvir-Tasin-Portfolio-/">
-    <img src="https://img.shields.io/badge/🚀_View_Live_Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Portfolio">
+    <img src="https://img.shields.io/badge/🌐_Visit_Live_Site-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Site">
   </a>
+  <img src="https://img.shields.io/github/repo-size/ttasin2x-droid/Tanvir-Tasin-Portfolio-?color=orange&style=for-the-badge&label=Project%20Size" alt="Size">
+  <img src="https://img.shields.io/badge/License-Proprietary-red?style=for-the-badge" alt="License">
 </p>
 
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=ttasin2x-droid&label=Profile%20Views&color=0e75b6&style=flat" alt="Views" />
-</p>
+<br>
 
----
 </div>
 
-### 🌟 About The Project
-Welcome to my personal digital space. This portfolio is a reflection of my journey where **art meets code**. It showcases my expertise in building responsive web interfaces and my passion for graphic design.
+---
 
-**Key Highlights:**
-* 🎨 **Visuals:** Custom graphics and aesthetic UI layout.
-* ⚡ **Performance:** Optimized for fast loading and smooth navigation.
-* 📱 **Responsive:** Flawless experience across all devices.
+## 📖 Project Overview
+This repository hosts the source code for my **Personal Portfolio Website**. It serves as a digital showcase of my technical skills, creative design capabilities, and professional journey. The architecture focuses on **clean code**, **high performance**, and **pixel-perfect responsiveness**.
+
+### ⚡ Key Features
+* **🎨 Modern UI/UX:** Minimalist design with a focus on typography and whitespace.
+* **📱 Fully Responsive:** Adaptive layout for Mobile, Tablet, and Desktop.
+* **🚀 Optimized Performance:** Lightweight assets ensuring <1s load time.
+* **💎 Custom Graphics:** Integrated vector art and SVG animations.
 
 ---
 
-### 🛠️ Technology Arsenal
-| Category | Tech Stack |
+## 🛠️ Tech Stack & Tools
+
+| **Core Technologies** | **Design & Tools** |
 | :--- | :--- |
-| **Frontend** | HTML5, CSS3, Modern JavaScript (ES6+) |
-| **Design** | Vector Art, Flat Illustration, UI Animation |
-| **Tools** | Git, GitHub, VS Code |
+| ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white) **Structure** | ![Figma](https://img.shields.io/badge/Figma-F24E1E?style=flat-square&logo=figma&logoColor=white) **UI Design** |
+| ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white) **Styling** | ![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=flat-square&logo=visual-studio-code&logoColor=white) **Development** |
+| ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black) **Logic & DOM** | ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white) **Version Control** |
 
 ---
 
 <br>
 
-## ⛔ 𝗗𝗔𝗡𝗚𝗘𝗥 𝗭𝗢𝗡𝗘: 𝗖𝗢𝗣𝗬𝗥𝗜𝗚𝗛𝗧 𝗡𝗢𝗧𝗜𝗖𝗘
+## ⚖️ LEGAL NOTICE & PROPRIETARY RIGHTS
 
-```diff
--  🛑 STOP AND READ CAREFULLY BEFORE SCROLLING 🛑
--  UNAUTHORIZED COPYING OF THIS REPOSITORY IS A VIOLATION OF INTELLECTUAL PROPERTY RIGHTS.
+<div align="center">
+  <h3>🛑 STOP: READ BEFORE PROCEEDING 🛑</h3>
+</div>
 
-IMPORTANT LEGAL DISCLAIMER:
+> **This repository is protected under International Copyright Laws and the Digital Millennium Copyright Act (DMCA).**
 
-This repository, including all source code (HTML, CSS, JS), graphical assets, layout designs, and text, is the sole intellectual property of Tanvir Tasin.
+The source code, graphical assets, design layout, and intellectual property contained within this repository are the **exclusive property of Tanvir Tasin**.
 
-🚫 STRICTLY PROHIBITED:
+### ⛔ RESTRICTIONS ON USE
+By accessing this repository, you acknowledge and agree to the following terms:
 
-Cloning/Forking: You are NOT allowed to fork this repository to build your own portfolio.
+1.  **NO UNAUTHORIZED CLONING:** You are **strictly prohibited** from cloning, forking, or downloading this repository to use as a template for your own portfolio.
+2.  **NO ASSET THEFT:** Copying specific design elements, animations, or code snippets for commercial redistribution is forbidden.
+3.  **NO PLAGIARISM:** Presenting this work as your own will be considered a violation of intellectual property rights.
 
-Code Theft: Copying my code structure or design elements for commercial or personal projects is strictly forbidden.
+### ⚠️ ENFORCEMENT POLICY
+Any violation of these terms will result in:
+* 🚩 Immediate filing of a **DMCA Takedown Notice** with GitHub Legal.
+* 🚩 Reporting of the infringing account for violation of **GitHub Community Guidelines**.
+* 🚩 Potential permanent suspension of your GitHub account.
 
-Reselling: Selling this template or claiming it as your own work will result in immediate legal action.
+> *You are welcome to read the code for educational inspiration, but respect the creator's effort by writing your own.*
 
-⚖️ ENFORCEMENT: Plagiarism is theft. If this code is found on another GitHub account or website:
-
-A DMCA Takedown Request will be filed immediately against your repository/hosting.
-
-Your GitHub account may face permanent suspension for copyright infringement.
-
-✅ EDUCATIONAL USE: You are welcome to view the code to learn how it works, but you must write your own code from scratch.
-
-© 2026 Tanvir Tasin. All Rights Reserved.
+<div align="center">
+  <br>
+  <b>© 2026 Tanvir Tasin. All Rights Reserved.</b>
+</div>
