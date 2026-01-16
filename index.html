@@ -3,31 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>Tanvir Tasin - Portfolio</title>
     <meta name="author" content="Tanvir Tasin">
     <meta name="description" content="Check out my latest graphic design works and scouting activities.">
-
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Tanvir Tasin - Creative Portfolio">
-    <meta property="og:description" content="Check out my latest graphic design works and scouting activities.">
-    <meta property="og:image" content="https://i.postimg.cc/KY7QKvLN/Messenger-creation-73E0A137-A629-4FAB-88DE-FB30518AB4DA.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Tanvir Tasin - Creative Portfolio">
-    <meta name="twitter:description" content="Check out my latest graphic design works and scouting activities.">
-    <meta name="twitter:image" content="https://i.postimg.cc/KY7QKvLN/Messenger-creation-73E0A137-A629-4FAB-88DE-FB30518AB4DA.jpg">
     
     <link rel="icon" type="image/png" href="https://i.postimg.cc/y8QscjyN/20260111-033841.png">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -39,9 +22,9 @@
         <div class="container">
             <div class="hero-card-main">
                 <div class="hero-text" data-aos="fade-right" data-aos-duration="1000">
-                    <h4>Bangladesh Scouts</h4>
-                    <h1>Tanvir Tasin</h1>
-                    <p style="margin-bottom: 30px; color: var(--text-light); font-size: 1.1rem;">Passionate about Scouting, Design, and Digital Creativity.</p>
+                    <h4 id="heroSubtitle">Bangladesh Scouts</h4>
+                    <h1 id="heroTitle">Tanvir Tasin</h1>
+                    <p id="heroDesc" style="margin-bottom: 30px; color: var(--text-light); font-size: 1.1rem;">Passionate about Scouting, Design, and Digital Creativity.</p>
                     <a href="#my-works" class="btn-main">Explore Works <i class="fas fa-arrow-down"></i></a>
                 </div>
                 <div class="hero-image-side" data-aos="fade-left" data-aos-duration="1000">
@@ -69,9 +52,7 @@
                 <h2>My Works for Bangladesh Scouts</h2>
                 <p>A collection of my graphic design and scouting memories</p>
             </div>
-
             <div class="gallery-grid" id="galleryGrid"></div>
-
             <div class="load-more-container">
                 <button id="view-more-btn" onclick="loadMoreImages()" class="btn-outline" data-aos="fade-up">View More <i class="fas fa-arrow-down"></i></button>
                 <button id="view-less-btn" onclick="viewLessImages()" class="btn-outline" style="display: none;" data-aos="fade-up">View Less <i class="fas fa-arrow-up"></i></button>
@@ -97,13 +78,13 @@
                     <img id="dynamicProfileImg" src="https://i.postimg.cc/qRY5L4c1/Copy-of-bd-20260110-020452-0000.jpg" alt="Tanvir Tasin Profile">
                 </div>
                 <div class="promo-content">
-                    <h2>I'm Tanvir Tasin</h2>
-                    <p class="subtitle">Graphic Designer & Scout</p>
-                    <p class="desc">Hello Dear, thank you for visiting my portfolio. If you want more details, please visit my social media accounts. THANK YOU.</p>
+                    <h2 id="aboutTitle">I'm Tanvir Tasin</h2>
+                    <p id="aboutSubtitle" class="subtitle">Graphic Designer & Scout</p>
+                    <p id="aboutDesc" class="desc">Hello Dear, thank you for visiting my portfolio. If you want more details, please visit my social media accounts. THANK YOU.</p>
                     <div class="info-grid">
-                        <div class="info-item"><i class="fas fa-map-marker-alt"></i> Barishal, Barguna, Barguna Sadar</div>
-                        <div class="info-item"><i class="fas fa-phone-alt"></i> +8801533327033</div>
-                        <div class="info-item"><i class="fas fa-envelope"></i> tasintanvir463@gmail.com</div>
+                        <div class="info-item"><i class="fas fa-map-marker-alt"></i> <span id="aboutLoc">Barishal, Barguna, Barguna Sadar</span></div>
+                        <div class="info-item"><i class="fas fa-phone-alt"></i> <span id="aboutPhone">+8801533327033</span></div>
+                        <div class="info-item"><i class="fas fa-envelope"></i> <span id="aboutEmail">tasintanvir463@gmail.com</span></div>
                     </div>
                     <div style="display: flex; gap: 15px;">
                         <button class="btn-main" onclick="openModal('contactModal')">Contact Me Anytime</button>
@@ -116,17 +97,14 @@
     <section class="section-padding" style="padding-top: 0;">
         <div class="container">
             <div class="social-box" data-aos="zoom-in-up">
-                <a href="https://www.facebook.com/tanvir.tasin.940" target="_blank" class="social-item fb">
-                    <div class="s-icon"><i class="fab fa-facebook-f"></i></div>
-                    <span>Facebook</span>
+                <a id="linkFB" href="https://www.facebook.com/tanvir.tasin.940" target="_blank" class="social-item fb">
+                    <div class="s-icon"><i class="fab fa-facebook-f"></i></div><span>Facebook</span>
                 </a>
-                <a href="https://www.instagram.com/tanvir_tasin1/" target="_blank" class="social-item insta">
-                    <div class="s-icon"><i class="fab fa-instagram"></i></div>
-                    <span>Instagram</span>
+                <a id="linkInsta" href="https://www.instagram.com/tanvir_tasin1/" target="_blank" class="social-item insta">
+                    <div class="s-icon"><i class="fab fa-instagram"></i></div><span>Instagram</span>
                 </a>
-                <a href="https://wa.me/+8801533327033" target="_blank" class="social-item wa">
-                    <div class="s-icon"><i class="fab fa-whatsapp"></i></div>
-                    <span>WhatsApp</span>
+                <a id="linkWA" href="https://wa.me/+8801533327033" target="_blank" class="social-item wa">
+                    <div class="s-icon"><i class="fab fa-whatsapp"></i></div><span>WhatsApp</span>
                 </a>
             </div>
             <p style="text-align: center; margin-top: 30px; font-size: 0.8rem; color: #999;">© 2026 Tanvir Tasin. All Rights Reserved.</p>
