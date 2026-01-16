@@ -38,6 +38,20 @@ This repository hosts the source code for my **Personal Portfolio Website**. It 
 
 ---
 
+## 📬 Let's Connect
+Got a project in mind or want to discuss the latest tech? Feel free to reach out.
+
+<p align="left">
+  <a href="mailto:your-email@gmail.com">
+    <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+  </a>
+  <a href="https://linkedin.com/in/your-username">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+  </a>
+</p>
+
+---
+
 <br>
 
 ## ⚖️ LEGAL NOTICE & PROPRIETARY RIGHTS
@@ -46,26 +60,34 @@ This repository hosts the source code for my **Personal Portfolio Website**. It 
   <h3>🛑 STOP: READ BEFORE PROCEEDING 🛑</h3>
 </div>
 
-> **This repository is protected under International Copyright Laws and the Digital Millennium Copyright Act (DMCA).**
+```diff
+-  ⛔ DANGER: DO NOT FORK, CLONE, OR COPY THIS REPOSITORY ⛔
+-  UNAUTHORIZED USE WILL RESULT IN IMMEDIATE DMCA TAKEDOWN ACTION.
+This repository is protected under International Copyright Laws and the Digital Millennium Copyright Act (DMCA).
 
-The source code, graphical assets, design layout, and intellectual property contained within this repository are the **exclusive property of Tanvir Tasin**.
+The source code, graphical assets, design layout, and intellectual property contained within this repository are the exclusive property of Tanvir Tasin.
 
-### ⛔ RESTRICTIONS ON USE
+⛔ RESTRICTIONS ON USE
 By accessing this repository, you acknowledge and agree to the following terms:
 
-1.  **NO UNAUTHORIZED CLONING:** You are **strictly prohibited** from cloning, forking, or downloading this repository to use as a template for your own portfolio.
-2.  **NO ASSET THEFT:** Copying specific design elements, animations, or code snippets for commercial redistribution is forbidden.
-3.  **NO PLAGIARISM:** Presenting this work as your own will be considered a violation of intellectual property rights.
+NO UNAUTHORIZED CLONING: You are strictly prohibited from cloning, forking, or downloading this repository to use as a template for your own portfolio.
 
-### ⚠️ ENFORCEMENT POLICY
+NO ASSET THEFT: Copying specific design elements, animations, or code snippets for commercial redistribution is forbidden.
+
+NO PLAGIARISM: Presenting this work as your own will be considered a severe violation of intellectual property rights.
+
+⚠️ ENFORCEMENT POLICY
 Any violation of these terms will result in:
-* 🚩 Immediate filing of a **DMCA Takedown Notice** with GitHub Legal.
-* 🚩 Reporting of the infringing account for violation of **GitHub Community Guidelines**.
-* 🚩 Potential permanent suspension of your GitHub account.
 
-> *You are welcome to read the code for educational inspiration, but respect the creator's effort by writing your own.*
+🚩 Immediate filing of a DMCA Takedown Notice with GitHub Legal.
+
+🚩 Reporting of the infringing account for violation of GitHub Community Guidelines.
+
+🚩 Potential permanent suspension of your GitHub account.
+
+You are welcome to read the code for educational inspiration, but respect the creator's effort by writing your own.
 
 <div align="center">
-  <br>
-  <b>© 2026 Tanvir Tasin. All Rights Reserved.</b>
-</div>
+
+
+<b>© 2026 Tanvir Tasin. All Rights Reserved.</b> </div>
