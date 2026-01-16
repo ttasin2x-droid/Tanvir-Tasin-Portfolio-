@@ -42,3 +42,25 @@ Welcome to my personal digital space. This portfolio is a reflection of my journ
 ```diff
 -  🛑 STOP AND READ CAREFULLY BEFORE SCROLLING 🛑
 -  UNAUTHORIZED COPYING OF THIS REPOSITORY IS A VIOLATION OF INTELLECTUAL PROPERTY RIGHTS.
+
+IMPORTANT LEGAL DISCLAIMER:
+
+This repository, including all source code (HTML, CSS, JS), graphical assets, layout designs, and text, is the sole intellectual property of Tanvir Tasin.
+
+🚫 STRICTLY PROHIBITED:
+
+Cloning/Forking: You are NOT allowed to fork this repository to build your own portfolio.
+
+Code Theft: Copying my code structure or design elements for commercial or personal projects is strictly forbidden.
+
+Reselling: Selling this template or claiming it as your own work will result in immediate legal action.
+
+⚖️ ENFORCEMENT: Plagiarism is theft. If this code is found on another GitHub account or website:
+
+A DMCA Takedown Request will be filed immediately against your repository/hosting.
+
+Your GitHub account may face permanent suspension for copyright infringement.
+
+✅ EDUCATIONAL USE: You are welcome to view the code to learn how it works, but you must write your own code from scratch.
+
+© 2026 Tanvir Tasin. All Rights Reserved.
