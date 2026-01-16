@@ -39,14 +39,14 @@ This repository hosts the source code for my **Personal Portfolio Website**. It 
 ---
 
 ## 📬 Let's Connect
-Got a project in mind or want to discuss the latest tech? Feel free to reach out.
+Got a project in mind or want to discuss the latest tech? Feel free to reach out directly.
 
 <p align="left">
-  <a href="mailto:your-email@gmail.com">
+  <a href="mailto:tasintanvir463@gmail.com">
     <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
   </a>
-  <a href="https://linkedin.com/in/your-username">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+  <a href="https://www.instagram.com/tanvir_tasin1/">
+    <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" />
   </a>
 </p>
 
@@ -90,4 +90,4 @@ You are welcome to read the code for educational inspiration, but respect the cr
 <div align="center">
 
 
-<b>© 2026 Tanvir Tasin. All Rights Reserved.</b> </div>
+<b>© 2026 Tanvir Tasin. All Rights Reserved.</b> </div>vvvvv
