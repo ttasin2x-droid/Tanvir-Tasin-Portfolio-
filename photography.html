@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photography Gallery - Tanvir Tasin</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/y8QscjyN/20260111-033841.png">
+
+    <style>
+        /* -----------------------
+           YOUR PERFECT LOADER CSS
+           ----------------------- */
+        #preloader {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-color: #ffffff;
+            background-image: radial-gradient(circle at center, #ffffff 0%, #f2f2f2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+            transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.6s;
+        }
+
+        .loader-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 120px;
+            width: auto;
+            font-size: 1.6em;
+            font-weight: 700;
+            color: #1a1a1a;
+            font-family: "Poppins", sans-serif;
+            user-select: none;
+            transform: scale(1.8);
+        }
+
+        .loader {
+            position: absolute;
+            top: 0; left: 0;
+            height: 100%; width: 100%;
+            z-index: 1;
+            background-color: transparent;
+            -webkit-mask: repeating-linear-gradient(90deg, transparent 0, transparent 6px, black 7px, black 8px);
+            mask: repeating-linear-gradient(90deg, transparent 0, transparent 6px, black 7px, black 8px);
+        }
+
+        .loader::after {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: radial-gradient(circle at 50% 50%, #e6e600 0%, transparent 50%),
+                radial-gradient(circle at 45% 45%, #ff0055 0%, transparent 45%),
+                radial-gradient(circle at 55% 55%, #00ccff 0%, transparent 45%),
+                radial-gradient(circle at 45% 55%, #00cc44 0%, transparent 45%),
+                radial-gradient(circle at 55% 45%, #3333ff 0%, transparent 45%);
+            -webkit-mask: radial-gradient(circle at 50% 50%, transparent 0%, transparent 10%, black 25%);
+            mask: radial-gradient(circle at 50% 50%, transparent 0%, transparent 10%, black 25%);
+            animation: transform-animation 2s infinite alternate, opacity-animation 4s infinite;
+            animation-timing-function: cubic-bezier(0.6, 0.8, 0.5, 1);
+        }
+
+        @keyframes transform-animation { 0% { transform: translate(-55%); } 100% { transform: translate(55%); } }
+        @keyframes opacity-animation { 0%, 100% { opacity: 0; } 15% { opacity: 0.7; } 65% { opacity: 0; } }
+
+        .loader-letter { display: inline-block; opacity: 0; animation: loader-letter-anim 4s infinite linear; z-index: 2; }
+        .loader-letter:nth-child(1) { animation-delay: 0.1s; }
+        .loader-letter:nth-child(2) { animation-delay: 0.205s; }
+        .loader-letter:nth-child(3) { animation-delay: 0.31s; }
+        .loader-letter:nth-child(4) { animation-delay: 0.415s; }
+        .loader-letter:nth-child(5) { animation-delay: 0.521s; }
+        .loader-letter:nth-child(6) { animation-delay: 0.626s; }
+        .loader-letter:nth-child(7) { animation-delay: 0.731s; }
+        .loader-letter:nth-child(8) { animation-delay: 0.837s; }
+        .loader-letter:nth-child(9) { animation-delay: 0.942s; }
+        .loader-letter:nth-child(10) { animation-delay: 1.047s; }
+        .loader-letter:nth-child(11) { animation-delay: 1.152s; }
+
+        @keyframes loader-letter-anim {
+            0% { opacity: 0; }
+            5% { opacity: 1; text-shadow: 2px 2px 5px rgba(0,0,0,0.2); transform: scale(1.1) translateY(-2px); }
+            20% { opacity: 0.2; }
+            100% { opacity: 0; }
+        }
+
+        @media (max-width: 600px) { .loader-wrapper { transform: scale(0.9); } }
+
+        /* -----------------------
+           GALLERY CSS
+           ----------------------- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #ffffff; color: #0f172a; font-family: 'Outfit', sans-serif; min-height: 100vh; overflow-x: hidden; position: relative; }
+        
+        .glow-blob { position: fixed; width: 600px; height: 600px; background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, rgba(255, 255, 255, 0) 70%); border-radius: 50%; pointer-events: none; z-index: -1; animation: floatGlow 15s infinite ease-in-out alternate; }
+        .glow-1 { top: -10%; left: -10%; }
+        .glow-2 { bottom: -10%; right: -10%; background: radial-gradient(circle, rgba(236, 72, 153, 0.08) 0%, rgba(255, 255, 255, 0) 70%); animation-delay: -5s; }
+        @keyframes floatGlow { 0% { transform: translate(0, 0) scale(1); } 100% { transform: translate(30px, 30px) scale(1.1); } }
+
+        .back-btn-top {
+            position: fixed; top: 30px; left: 30px; background: white;
+            padding: 10px 20px; border-radius: 50px; text-decoration: none;
+            color: #0f172a; font-weight: 600; font-size: 0.9rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.05);
+            z-index: 100; transition: all 0.3s ease; display: flex; align-items: center; gap: 8px;
+        }
+        .back-btn-top:hover { transform: translateX(-3px); box-shadow: 0 8px 25px rgba(59, 130, 246, 0.15); color: #3b82f6; }
+
+        .header { text-align: center; padding: 100px 20px 60px; position: relative; z-index: 10; }
+        .title-wrapper { position: relative; display: inline-block; }
+        .header h1 { font-size: 3.5rem; font-weight: 800; color: #0f172a; text-transform: uppercase; letter-spacing: 2px; position: relative; z-index: 2; }
+        .subtitle-sig { font-family: 'Great Vibes', cursive; font-size: 4rem; color: #3b82f6; position: absolute; top: 65%; left: 50%; transform: translate(-50%, -50%) rotate(-8deg); z-index: 1; opacity: 0.35; white-space: nowrap; pointer-events: none; }
+
+        .container { width: 90%; max-width: 1300px; margin: 0 auto; padding-bottom: 80px; }
+        .gallery-wrapper { display: flex; flex-direction: column; gap: 100px; align-items: center; }
+        .photo-bundle { display: flex; justify-content: center; align-items: center; width: 100%; }
+        
+        .photo-card { 
+            width: 240px; height: 340px; background: white; border-radius: 12px; 
+            position: relative; margin-right: -80px; box-shadow: -5px 5px 20px rgba(0,0,0,0.1); 
+            border: 4px solid white; transition: all 0.4s ease; cursor: pointer; 
+            overflow: hidden; transform-origin: center bottom; 
+        }
+        .photo-card:last-child { margin-right: 0; }
+        .photo-card img { width: 100%; height: 100%; object-fit: cover; }
+        .photo-card:hover { z-index: 100; transform: rotate(0deg) scale(1.15) translateY(-20px) !important; box-shadow: 0 25px 50px rgba(59, 130, 246, 0.25); }
+
+        .lightbox { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.98); z-index: 10000; display: none; justify-content: center; align-items: center; opacity: 0; transition: opacity 0.3s ease; }
+        .lightbox.active { display: flex; opacity: 1; }
+        .lightbox img { max-width: 90%; max-height: 85vh; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.15); }
+        .close-lb { position: absolute; top: 30px; right: 30px; color: #0f172a; font-size: 2.5rem; cursor: pointer; }
+        .lb-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 60px; height: 60px; background: transparent; color: rgba(15, 23, 42, 0.2); display: flex; align-items: center; justify-content: center; border-radius: 50%; cursor: pointer; transition: all 0.5s ease; font-size: 2rem; z-index: 10001; }
+        .lb-nav:hover { background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(8px); color: #3b82f6; }
+        .lb-prev { left: 20px; } .lb-next { right: 20px; }
+
+        @media (max-width: 768px) {
+            .header h1 { font-size: 2.2rem; }
+            .subtitle-sig { font-size: 3rem; top: 60%; }
+            .photo-card { width: 140px; height: 200px; margin-right: -70px; }
+            .back-btn-top { top: 20px; left: 20px; padding: 8px 16px; font-size: 0.8rem; }
+            .header { padding-top: 80px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="preloader">
+        <div class="loader-wrapper">
+            <span class="loader-letter">P</span><span class="loader-letter">H</span><span class="loader-letter">O</span><span class="loader-letter">T</span><span class="loader-letter">O</span><span class="loader-letter">G</span><span class="loader-letter">R</span><span class="loader-letter">A</span><span class="loader-letter">P</span><span class="loader-letter">H</span><span class="loader-letter">Y</span>
+            <div class="loader"></div>
+        </div>
+    </div>
+
+    <div class="glow-blob glow-1"></div>
+    <div class="glow-blob glow-2"></div>
+
+    <a href="index.html" class="back-btn-top">
+        <i class="fas fa-arrow-left"></i> Home
+    </a>
+
+    <header class="header">
+        <div class="title-wrapper">
+            <h1>Photography</h1>
+            <span class="subtitle-sig">Gallery</span>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="gallery-wrapper" id="fullPhotoGrid">
+            </div>
+    </div>
+
+    <div id="lightbox" class="lightbox">
+        <span class="close-lb" onclick="closeLightbox()">&times;</span>
+        <div class="lb-nav lb-prev" onclick="changeSlide(-1)">&#10094;</div>
+        <div class="lb-nav lb-next" onclick="changeSlide(1)">&#10095;</div>
+        <img id="lightbox-img" src="" alt="Full View">
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+
+        const firebaseConfig = { 
+            apiKey: "AIzaSyDNtkM7hLeIsD2HzWxQKJFH8fsXOVKrv18", 
+            authDomain: "tanvir-gallery-free.firebaseapp.com", 
+            databaseURL: "https://tanvir-gallery-free-default-rtdb.firebaseio.com", 
+            projectId: "tanvir-gallery-free", 
+            storageBucket: "tanvir-gallery-free.firebasestorage.app", 
+            messagingSenderId: "442605910126", 
+            appId: "1:442605910126:web:b89792cb6204a5b7eb0e7f" 
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+
+        let galleryImages = [];
+        let currentIndex = 0;
+        const wrapper = document.getElementById('fullPhotoGrid');
+
+        // Close Preloader after data or 2s
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const p = document.getElementById('preloader');
+                p.style.opacity = '0';
+                setTimeout(() => p.style.visibility = 'hidden', 600);
+            }, 2500); // 2.5s for perfect visual impact
+        });
+
+        onValue(ref(db, 'photography'), (snapshot) => {
+            const data = snapshot.val();
+            wrapper.innerHTML = "";
+            galleryImages = [];
+            if (data) {
+                const images = Object.values(data).reverse();
+                images.forEach(img => galleryImages.push(img.url));
+                for (let i = 0; i < images.length; i += 4) {
+                    const bundle = document.createElement('div');
+                    bundle.className = 'photo-bundle';
+                    for (let j = i; j < i + 4 && j < images.length; j++) {
+                        const card = document.createElement('div');
+                        card.className = 'photo-card';
+                        card.onclick = () => window.openLightbox(j);
+                        const pos = j - i; 
+                        let tilt = (pos === 0) ? -6 : (pos === 1) ? 4 : (pos === 2) ? -5 : 3;
+                        card.style.transform = `rotate(${tilt}deg)`;
+                        card.innerHTML = `<img src="${images[j].url}" loading="lazy">`;
+                        bundle.appendChild(card);
+                    }
+                    wrapper.appendChild(bundle);
+                }
+            }
+        });
+
+        window.openLightbox = (i) => { currentIndex = i; updateLB(); document.getElementById('lightbox').classList.add('active'); document.body.style.overflow = 'hidden'; }
+        window.changeSlide = (s) => { currentIndex += s; if(currentIndex >= galleryImages.length) currentIndex = 0; if(currentIndex < 0) currentIndex = galleryImages.length - 1; updateLB(); }
+        function updateLB() { const img = document.getElementById('lightbox-img'); img.style.opacity = '0'; setTimeout(() => { img.src = galleryImages[currentIndex]; img.style.opacity = '1'; }, 200); }
+        window.closeLightbox = () => { document.getElementById('lightbox').classList.remove('active'); document.body.style.overflow = 'auto'; }
+    </script>
+</body>
+</html>
