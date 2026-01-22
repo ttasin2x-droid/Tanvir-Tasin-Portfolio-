@@ -101,7 +101,35 @@
            GALLERY CSS
            ----------------------- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: #ffffff; color: #0f172a; font-family: 'Outfit', sans-serif; min-height: 100vh; overflow-x: hidden; position: relative; }
+        
+        body { 
+            background-color: #ffffff; 
+            color: #0f172a; 
+            font-family: 'Outfit', sans-serif; 
+            min-height: 100vh; 
+            overflow-x: hidden; 
+            position: relative; 
+        }
+
+        /* ----- FADED GRID BACKGROUND (ADDED HERE) ----- */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            /* ছোট ছোট গ্রিড লাইন */
+            background-image: 
+                linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+            background-size: 20px 20px; /* 20px সাইজ (ছোট গ্রিড) */
+            
+            /* ফেড ইফেক্ট (মাঝখানে পরিষ্কার, পাশে ঝাপসা) */
+            -webkit-mask-image: radial-gradient(circle, black 30%, transparent 90%);
+            mask-image: radial-gradient(circle, black 30%, transparent 90%);
+            
+            z-index: -2; /* কনটেন্টের নিচে থাকবে */
+            pointer-events: none;
+        }
         
         .glow-blob { position: fixed; width: 600px; height: 600px; background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, rgba(255, 255, 255, 0) 70%); border-radius: 50%; pointer-events: none; z-index: -1; animation: floatGlow 15s infinite ease-in-out alternate; }
         .glow-1 { top: -10%; left: -10%; }
@@ -136,12 +164,31 @@
         .photo-card img { width: 100%; height: 100%; object-fit: cover; }
         .photo-card:hover { z-index: 100; transform: rotate(0deg) scale(1.15) translateY(-20px) !important; box-shadow: 0 25px 50px rgba(59, 130, 246, 0.25); }
 
-        .lightbox { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.98); z-index: 10000; display: none; justify-content: center; align-items: center; opacity: 0; transition: opacity 0.3s ease; }
+        /* Lightbox */
+        .lightbox { 
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+            background: rgba(255, 255, 255, 0.98); z-index: 10000; 
+            display: none; justify-content: center; align-items: center; 
+            opacity: 0; transition: opacity 0.3s ease;
+            touch-action: none; /* Disable default touch actions to capture swipe */
+        }
         .lightbox.active { display: flex; opacity: 1; }
-        .lightbox img { max-width: 90%; max-height: 85vh; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.15); }
-        .close-lb { position: absolute; top: 30px; right: 30px; color: #0f172a; font-size: 2.5rem; cursor: pointer; }
-        .lb-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 60px; height: 60px; background: transparent; color: rgba(15, 23, 42, 0.2); display: flex; align-items: center; justify-content: center; border-radius: 50%; cursor: pointer; transition: all 0.5s ease; font-size: 2rem; z-index: 10001; }
-        .lb-nav:hover { background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(8px); color: #3b82f6; }
+        .lightbox img { 
+            max-width: 90%; max-height: 85vh; border-radius: 12px; 
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15); 
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+        .close-lb { position: absolute; top: 30px; right: 30px; color: #0f172a; font-size: 2.5rem; cursor: pointer; z-index: 10002; }
+        
+        /* Hide nav buttons for cleaner look, but kept for desktop accessibility */
+        .lb-nav { 
+            position: absolute; top: 50%; transform: translateY(-50%); width: 60px; height: 60px; 
+            background: transparent; color: rgba(15, 23, 42, 0.1); display: flex; 
+            align-items: center; justify-content: center; border-radius: 50%; 
+            cursor: pointer; transition: all 0.5s ease; font-size: 2rem; z-index: 10001; 
+        }
+        .lb-nav:hover { color: #3b82f6; }
         .lb-prev { left: 20px; } .lb-next { right: 20px; }
 
         @media (max-width: 768px) {
@@ -150,6 +197,7 @@
             .photo-card { width: 140px; height: 200px; margin-right: -70px; }
             .back-btn-top { top: 20px; left: 20px; padding: 8px 16px; font-size: 0.8rem; }
             .header { padding-top: 80px; }
+            .lb-nav { display: none; } /* Hide buttons on mobile for swipe focus */
         }
     </style>
 </head>
@@ -209,16 +257,18 @@
         let galleryImages = [];
         let currentIndex = 0;
         const wrapper = document.getElementById('fullPhotoGrid');
+        const lb = document.getElementById('lightbox');
 
-        // Close Preloader after data or 2s
+        // Close Preloader
         window.addEventListener('load', () => {
             setTimeout(() => {
                 const p = document.getElementById('preloader');
                 p.style.opacity = '0';
                 setTimeout(() => p.style.visibility = 'hidden', 600);
-            }, 2500); // 2.5s for perfect visual impact
+            }, 2500);
         });
 
+        // Load Gallery
         onValue(ref(db, 'photography'), (snapshot) => {
             const data = snapshot.val();
             wrapper.innerHTML = "";
@@ -244,10 +294,68 @@
             }
         });
 
-        window.openLightbox = (i) => { currentIndex = i; updateLB(); document.getElementById('lightbox').classList.add('active'); document.body.style.overflow = 'hidden'; }
-        window.changeSlide = (s) => { currentIndex += s; if(currentIndex >= galleryImages.length) currentIndex = 0; if(currentIndex < 0) currentIndex = galleryImages.length - 1; updateLB(); }
-        function updateLB() { const img = document.getElementById('lightbox-img'); img.style.opacity = '0'; setTimeout(() => { img.src = galleryImages[currentIndex]; img.style.opacity = '1'; }, 200); }
-        window.closeLightbox = () => { document.getElementById('lightbox').classList.remove('active'); document.body.style.overflow = 'auto'; }
+        // Lightbox Control
+        window.openLightbox = (i) => { 
+            currentIndex = i; 
+            updateLB(); 
+            lb.classList.add('active'); 
+            document.body.style.overflow = 'hidden'; 
+        }
+
+        window.changeSlide = (s) => { 
+            currentIndex += s; 
+            if(currentIndex >= galleryImages.length) currentIndex = 0; 
+            if(currentIndex < 0) currentIndex = galleryImages.length - 1; 
+            updateLB(); 
+        }
+
+        function updateLB() { 
+            const img = document.getElementById('lightbox-img'); 
+            img.style.opacity = '0'; 
+            setTimeout(() => { 
+                img.src = galleryImages[currentIndex]; 
+                img.style.opacity = '1'; 
+            }, 200); 
+        }
+
+        window.closeLightbox = () => { 
+            lb.classList.remove('active'); 
+            document.body.style.overflow = 'auto'; 
+        }
+
+        // SWIPE LOGIC
+        let touchstartX = 0;
+        let touchendX = 0;
+
+        function checkDirection() {
+            const swipeThreshold = 50; // pixels
+            if (touchendX < touchstartX - swipeThreshold) {
+                // Swiped Left -> Next Image
+                window.changeSlide(1);
+            }
+            if (touchendX > touchstartX + swipeThreshold) {
+                // Swiped Right -> Previous Image
+                window.changeSlide(-1);
+            }
+        }
+
+        lb.addEventListener('touchstart', e => {
+            touchstartX = e.changedTouches[0].screenX;
+        }, false);
+
+        lb.addEventListener('touchend', e => {
+            touchendX = e.changedTouches[0].screenX;
+            checkDirection();
+        }, false);
+
+        // Keyboard Support
+        document.addEventListener('keydown', e => {
+            if(!lb.classList.contains('active')) return;
+            if(e.key === "ArrowRight") window.changeSlide(1);
+            if(e.key === "ArrowLeft") window.changeSlide(-1);
+            if(e.key === "Escape") window.closeLightbox();
+        });
+
     </script>
 </body>
 </html>
